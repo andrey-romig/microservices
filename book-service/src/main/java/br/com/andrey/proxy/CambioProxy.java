@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.andrey.dto.CambioDTO;
 
-@FeignClient(name = "cambio-service", url = "localhost:8000")
+@FeignClient(name = "cambio-service")
 public interface CambioProxy {
 
 	@GetMapping(value = "/cambio")

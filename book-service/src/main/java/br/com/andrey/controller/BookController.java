@@ -42,8 +42,10 @@ public class BookController {
 		} else {
 			
 			CambioDTO cambio = cambioProxy.findByFromAndTo(book.getPrice(), "USD", currency);
+			String bookPort = environment.getProperty("local.server.port");
+			String cambioPort =  cambio.getEnvironment();
 			
-			book.setEnvironment(environment.getProperty("local.server.port"));
+			book.setEnvironment("Book port: " + bookPort + "; Cambio port: " + cambioPort);
 			book.setPrice(cambio.getConvertedValue());
 			book.setCurrency(currency);
 			return book;
