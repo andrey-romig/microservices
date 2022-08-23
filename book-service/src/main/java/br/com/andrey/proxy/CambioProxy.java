@@ -11,7 +11,7 @@ import br.com.andrey.dto.CambioDTO;
 @FeignClient(name = "cambio-service")
 public interface CambioProxy {
 
-	@GetMapping(value = "/cambio")
+	@GetMapping(value = "/cambio-service/cambio")
 	public CambioDTO findByFromAndTo(
 			@RequestParam(name = "amount", required = false) BigDecimal amount,
     		@RequestParam(name = "from", required = false) String from,
